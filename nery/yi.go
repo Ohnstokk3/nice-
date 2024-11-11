@@ -36,7 +36,7 @@ func websocketHandler(w http.ResponseWriter, r *http.Request) {
 		log.Printf("Received message: %s", message)
 
 		//send message to client
-		err = conn.WriteMessage(websocket.TextMessage, message)
+		err = conn.WriteMessage(websocket.TextMessage, []byte("yes yes"))
 		if err != nil {
 			log.Println(err)
 			break
